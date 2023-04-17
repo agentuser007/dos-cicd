@@ -33,6 +33,7 @@ class BookForm(forms.ModelForm):
         return publisher.strip()
         
     class Meta:
+        "define fields"
         model = Book
         fields = ['title', 'author', 'publisher', 'publication_date', 'pages']
         

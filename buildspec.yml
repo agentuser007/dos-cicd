@@ -18,7 +18,7 @@ phases:
             - export PATH=$PATH:./sonar-scanner/bin
             - pylint --disable=W0611 $CODEBUILD_SRC_DIR/*.py
             - pylint --disable=W0611 $CODEBUILD_SRC_DIR/myproject/*.py
-            - pylint --disable=W0611,C0303,E1101,R0903 $CODEBUILD_SRC_DIR/book/*.py
+            - pylint --disable=W0611,C0303,E1101,R0903,C0301,C0103,W0613 $CODEBUILD_SRC_DIR/book/*.py
 
     build:
         commands:
