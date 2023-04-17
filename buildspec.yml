@@ -20,7 +20,6 @@ phases:
             - sonar-scanner -Dsonar.organization=agentuser007 -Dsonar.projectKey=x22174435-dospsc -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=f9d73b178018f1f6b1c2ee9919ae486779d1afae
             - sleep 5
             - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=x22174435-dospsc > analysis.json
-            - cat result.json
             - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
             
 artifacts:
