@@ -16,8 +16,8 @@ phases:
             - mv sonar-scanner-4.6.0.2311-linux  sonar-scanner
             - export PATH=$PATH:./sonar-scanner/bin
             - pylint $CODEBUILD_SRC_DIR/*.py
-            - pylint $CODEBUILD_SRC_DIR/book/*.py
             - pylint $CODEBUILD_SRC_DIR/myproject/*.py
+            - pylint $CODEBUILD_SRC_DIR/book/*.py
 
     build:
         commands:
