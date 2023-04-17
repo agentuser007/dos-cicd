@@ -1,4 +1,12 @@
 #!/usr/bin/env python
+"""
+Django management script.
+
+Usage: python manage.py <command>
+
+For more information on Django management commands, see:
+https://docs.djangoproject.com/en/3.2/ref/django-admin/
+"""
 import os
 import sys
 
