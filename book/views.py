@@ -1,3 +1,4 @@
+"""view control"""
 from django.shortcuts import render, redirect
 from .models import Book
 from .forms import BookForm
@@ -60,3 +61,5 @@ def book_recommendation(request):
     """
     books = Book.objects.all().order_by('?')[:3]
     return render(request, 'book_recommendation.html', {'books': books})
+    
+    

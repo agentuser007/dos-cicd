@@ -1,9 +1,9 @@
 """
 This module defines the forms used to interact with the Book model.
 """
+from django.core.exceptions import ValidationError
 from django import forms
 from .models import Book
-from django.core.exceptions import ValidationError
 
 
 class BookForm(forms.ModelForm):
@@ -13,11 +13,11 @@ class BookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = ['title', 'author', 'publisher', 'publication_date', 'pages']
-
-        """
-        Validate the author field.
-        """
+        
     def clean_author(self):
+        """
+        Validate the autho field.
+        """
         author = self.cleaned_data.get('author')
         if author.startswith(' ') or author.endswith(' '):
             raise ValidationError("Author cannot start or end with a space")
@@ -25,10 +25,11 @@ class BookForm(forms.ModelForm):
             raise ValidationError("Author cannot contain the '~' character")
         return author.strip()
 
+
+    def clean_publisher(self):
         """
         Validate the publisher field.
         """
-    def clean_publisher(self):
         publisher = self.cleaned_data.get('publisher')
         if publisher.startswith(' ') or publisher.endswith(' '):
             raise ValidationError("Publisher cannot start or end with a space")
