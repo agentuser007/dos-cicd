@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/environment/bookmanagement
+    destination: /home/ec2-user/bookmanagement
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
