@@ -15,6 +15,10 @@ phases:
             - unzip ./sonar-scanner-cli-4.6.0.2311-linux.zip
             - mv sonar-scanner-4.6.0.2311-linux  sonar-scanner
             - export PATH=$PATH:./sonar-scanner/bin
+            - pylint $CODEBUILD_SRC_DIR/*.py
+            - pylint $CODEBUILD_SRC_DIR/book/*.py
+            - pylint $CODEBUILD_SRC_DIR/myproject/*.py
+
     build:
         commands:
             - sonar-scanner -Dsonar.organization=agentuser007 -Dsonar.projectKey=x22174435-dospsc -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=f9d73b178018f1f6b1c2ee9919ae486779d1afae
