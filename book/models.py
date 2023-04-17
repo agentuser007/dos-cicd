@@ -11,4 +11,4 @@ class Book(models.Model):
 
     def __str__(self):
         """Return string representation of book."""
-        return self.title
+        return str(self.title)

@@ -9,10 +9,7 @@ class BookForm(forms.ModelForm):
     """
     A form for creating or updating a Book instance.
     """
-    class Meta:
-        model = Book
-        fields = ['title', 'author', 'publisher', 'publication_date', 'pages']
-        
+    
     def clean_author(self):
         """
         Validate the autho field.
@@ -35,4 +32,7 @@ class BookForm(forms.ModelForm):
             raise ValidationError("Publisher cannot contain the '~' character")
         return publisher.strip()
         
+    class Meta:
+        model = Book
+        fields = ['title', 'author', 'publisher', 'publication_date', 'pages']
         
