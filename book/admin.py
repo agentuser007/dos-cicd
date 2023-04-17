@@ -1,3 +1,8 @@
-from django.contrib import admin
+"""
+This module defines the admin interface for the Book model.
+"""
 
-# Register your models here.
+from django.contrib import admin
+from .models import Book
+
+admin.site.register(Book)
