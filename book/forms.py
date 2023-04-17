@@ -5,7 +5,6 @@ from django.core.exceptions import ValidationError
 from django import forms
 from .models import Book
 
-
 class BookForm(forms.ModelForm):
     """
     A form for creating or updating a Book instance.
@@ -24,7 +23,6 @@ class BookForm(forms.ModelForm):
         if '~' in author:
             raise ValidationError("Author cannot contain the '~' character")
         return author.strip()
-
 
     def clean_publisher(self):
         """
